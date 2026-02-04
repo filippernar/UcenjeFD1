@@ -56,23 +56,30 @@ if(x<y&&x<z){
     const w = Number(d);
 
     if (isNaN(x)) {
-        rezultat.innerHTML = 'A nije broj';
-        return;
+      rezultat.innerHTML = 'A nije broj';
+      return;
     }
     if (isNaN(y)) {
-        rezultat.innerHTML = 'B nije broj';
-        return;
+      rezultat.innerHTML = 'B nije broj';
+      return;
     }
     if (isNaN(z)) {
-        rezultat.innerHTML = 'C nije broj';
-        return;
+      rezultat.innerHTML = 'C nije broj';
+      return;
     }
     if (isNaN(w)) {
-        rezultat.innerHTML = 'D nije broj';
-        return;
+      rezultat.innerHTML = 'D nije broj';
+      return;
     }
+
+    // Ovdje izračunaj npr. sumu ili najveći broj
+    let suma = x + y + z + w;
+    rezultat.innerHTML = `Suma četiri broja je: ${suma}`;
+
+    return; // Obavezno dodaj return da ne ide na "Nepoznati zadatak"
+  } // <--- SAMO OBIČNA ZAGRADA (zatvara IF)
     
-   const rezultat = document.getElementById('rezultat');
+   //const rezultat = document.getElementById('rezultat');
 
 
 
