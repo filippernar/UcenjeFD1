@@ -82,6 +82,110 @@ if(x<y&&x<z){
    //const rezultat = document.getElementById('rezultat');
 
 
+if(zadatak === '5') {
+  console.log('Rješavam zadatak 5');
+//Zbroj većih brojeva (A i B)+(C i D)
+const x = Number(a);
+const y = Number(b);
+const z = Number(c);
+const q = Number(d)
+
+
+if(!x || !y || !z || !q){
+    rezultat.innerHTML = 'Jedno od unosnih polja nije broj';
+}
+
+
+if(x>y && z>q){
+  rezultat.innerHTML=x+z;
+}
+else if(x>y && q>z){
+  rezultat.innerHTML=x+q;
+}
+else if (y > x && z > q) {
+    rezultat.innerHTML = y + z;
+}
+else if (y > x && q > z) {
+    rezultat.innerHTML = y + q;
+}
+
+  return;
+}
+
+
+if(zadatak === '6'){
+
+//Za upisani broj u polju D ispiši deset puta veći broj
+
+const x = Number(d);
+    if (!x || x === 0) {
+        rezultat.innerHTML = 'Vrijednost u polju D nije broj ili je 0';
+        return;
+    }
+    rezultat.innerHTML = x * 10;
+    return;
+}
+
+if(zadatak === '7'){
+//Za uneseno ime grada u polju B ispiši je li sjedište Edunove ili ne
+  if(!b){
+    rezultat.innerHTML='Obavezno unos grada pod B'
+    return;
+
+
+  }
+if(b.toLowerCase() === 'osijek'){
+  rezultat.innerHTML=`${b} je sjedište Edunove`
+  
+}
+else {
+  rezultat.innerHTML=`${b} nije sjedište Edunove`
+}
+
+
+
+
+  return;
+}
+
+if(zadatak === '8'){
+//Za upisane pojmove u polju A i B ispiši ih jedno pokraj drugog
+
+rezultat.innerHTML=`${a} ${b}`
+
+
+    return
+}
+
+if(zadatak === '9'){
+  const x=Number(a)
+  const y=Number(b)
+  if(!x || x===0){
+    rezultat.innerHTML='greška'
+    return
+  }
+  if(!y || y===0){
+    rezultat.innerHTML='greška'
+    return
+  }
+  rezultat.innerHTML=x*y
+
+  //Ispiši umnožak broja A i D
+
+
+
+  return
+
+}
+
+  
+
+
+
+
+
+
+
 
 
 
