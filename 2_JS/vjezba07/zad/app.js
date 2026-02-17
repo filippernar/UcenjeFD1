@@ -86,6 +86,20 @@ const b1 = Number(b)
     break;
     case '4':
       // rješavanje 4. zadatak
+      //Za unesenu riječ u polje A provjerite da li je palindrom ili ne
+//palindrom je: ružan Edo ode na žur
+
+    let s = '';
+    debugger;
+    for(let i = 0;i<a.lenght;i++){
+      if(a[i]|=''){
+        s+=a[i].toLowerCase();
+      }
+    }
+    console.log('s=',s)
+
+
+
 
       // kraj rješavanje 4. zadatak
     break;
