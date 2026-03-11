@@ -1,17 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import{Container} from 'react-bootstrap'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+
 import react from './assets/react.svg'
-import Table from 'react-bootstrap/Table';
-import ListGroup from 'react-bootstrap/ListGroup';
+
 import './App.css'
+import { Button, Card, Container, Table } from 'react-bootstrap'
 
 function App() {
 
   return (
     <>
     <Container>
+
+    <a href="moduli/index.html">Moduli</a>
+
+    <hr />
+    
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={react} />
       <Card.Body>
