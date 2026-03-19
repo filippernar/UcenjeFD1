@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import SmjerService from "../../services/smjerovi/SmjerService"
 import { Table } from "react-bootstrap"
-import { GrValidate } from "react-icons/gr"
 import { NumericFormat } from "react-number-format"
+import { GrValidate } from "react-icons/gr"
+import FormatDatuma from "../../components/FormatDatuma"
 
 export default function SmjerPregled(){
 
@@ -23,45 +24,48 @@ export default function SmjerPregled(){
 
     return(
         <>
-        <Table>
-            <thead>
-                <tr>
-                    <th>Naziv</th>
-                    <th>Trajanje</th>
-                    <th>Cijena</th>
-                    <th>Datum pokretanja</th>
-                    <th>Aktivan</th>
-                    <th>Akcija</th>
-                </tr>
-            </thead>
-            <tbody>
-                {smjerovi && smjerovi.map((smjer)=>(
+            <Table>
+                <thead>
                     <tr>
-                        <td>{smjer.naziv}</td>
-                        <td>{smjer.trajanje}</td>
-                        <td>
-                        <NumericFormat
-                        value={smjer.cijena}
-                        displayType={'text'}
-                        thousandSeparator='.'
-                        decimalSeparator=','
-                        suffix={'€'}
-                        decimaleScale={2}
-                        fixedDecimaleScale
-                        
-                        />
-                        </td>
-                        <td>{smjer.datumPolretanja}</td>
-                        <td>
-                            <GrValidate
-                            size={25}
-                            color={smjer.aktivan ? 'green' : 'red'}
-                            />
-                        </td>
+                        <th>Naziv</th>
+                        <th>Trajanje</th>
+                        <th>Cijena</th>
+                        <th>Datum pokretanja</th>
+                        <th>Aktivan</th>
+                        <th>Akcija</th>
                     </tr>
-                ))}
-            </tbody>
-        </Table>
+                </thead>
+                <tbody>
+                    {smjerovi && smjerovi.map((smjer)=>(
+                        <tr>     
+                            <td>{smjer.naziv}</td>
+                            <td>{smjer.trajanje}</td>
+                            <td>
+                                <NumericFormat 
+                                value={smjer.cijena}
+                                displayType={'text'}
+                                thousandSeparator='.'
+                                decimalSeparator=','
+                                suffix={' €'}
+                                decimalScale={2}
+                                fixedDecimalScale
+                                />
+                            </td>
+                            <td>
+                                <FormatDatuma datum={smjer.datumPokretanja} />
+
+                            </td>
+                            <td>
+                                <GrValidate 
+                                size={25}
+                                color={smjer.aktivan ? 'green' : 'red'}
+                                />
+                            </td>
+                            <td></td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
         </>
     )
 }
